@@ -49,7 +49,7 @@ function render_page($cegui_versions, $ceed_versions)
 "<!DOCTYPE html>
 <html class='uk-height-1-1' lang='en-gb' dir='ltr'>
     <head>
-        <title></title>
+        <title>CEGUI and CEED documentation</title>
         <link rel='stylesheet' href='css/uikit.gradient.min.css' />
         <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
         <script src='js/uikit.min.js'></script>
