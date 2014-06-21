@@ -1,0 +1,4 @@
+Syntax: glob
+
+local-temp/
+.ropeproject/

@@ -1,0 +1,6 @@
+RewriteEngine on
+
+# doxygen inject for CEGUI API docs
+# this allows version switching
+RewriteCond %{REQUEST_URI} ^/docs/[0-9]+\.[0-9]+\.[0-9]+/dynsections.js
+RewriteRule ^(.*)$ http://static.cegui.org.uk/docs/dynsections.js [L]
