@@ -2,6 +2,7 @@
 //ini_set('display_errors', 'On');
 //error_reporting(E_ALL);
 // PHP is so horrible, yuck!
+require('index.ui.php');
 
 $parent_dir = realpath(dirname(__FILE__));
 $dirs = scandir($parent_dir);
@@ -36,21 +37,6 @@ if ($_REQUEST['json'] == '1')
 }
 else
 {
-    echo("Available CEGUI versions:<br />\n");
-    echo("<ol>\n");
-    foreach($cegui_versions as $ver)
-    {
-        echo("<li><a href=\"".$ver."\">".$ver."</a></li>\n");
-    }
-    echo("</ol>\n");
-
-    echo("Available CEED versions:<br />\n");
-    echo("<ol>\n");
-    foreach($ceed_versions as $ver)
-    {
-        echo("<li><a href=\"".$ver."\">".$ver."</a></li>\n");
-    }
-    echo("</ol>\n");
+    render_page($cegui_versions, $ceed_versions);
 }
-
 ?>
