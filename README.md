@@ -8,13 +8,13 @@
 yum install doxygen
 yum install gnu-free-sans-fonts
 ```
-1. Call:
+2. Call:
 ```bash
 cd docs-builder
 ./builder build
 ```
-2. Wait for it to finish
-3. Collect the bits in local-temp/output
+3. Wait for it to finish
+4. Collect the bits in local-temp/output
 
    It will contain folders with doxygen HTML as well as zip files conveniently prepared for upload to sourceforge
 
@@ -24,19 +24,19 @@ CEGUI hosts API reference and other docs at http://static.cegui.org.uk/docs Uplo
 
 1. Get the zip files into `/home/project-web/crayzedsgui/htdocs/docs/` using scp
 
-1. Request a shell
+2. Request a shell
 ```bash
 ssh -t $username,crayzedsgui@shell.sourceforge.net create
 ```
-2. Navigate to the crayzedsgui htdocs/docs folder
+3. Navigate to the crayzedsgui htdocs/docs folder
 ```bash
 cd /home/project-web/crayzedsgui/htdocs/docs/
 ```
-3. Extract all the zip files
+4. Extract all the zip files
 ```bash
 for z in *.zip; do unzip $z; done
 ```
-4. Cleanup
+5. Cleanup
 ```bash
 rm *.zip
 ```
