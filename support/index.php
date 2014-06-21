@@ -23,8 +23,8 @@ foreach($dirs as $dir)
         array_push($ceed_versions, $dir);
 }
 
-sort($cegui_versions);
-sort($ceed_versions);
+rsort($cegui_versions);
+rsort($ceed_versions);
 
 if ($_REQUEST['json'] == '1')
 {
