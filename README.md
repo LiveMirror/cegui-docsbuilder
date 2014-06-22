@@ -2,19 +2,19 @@
 
 ## Let's build the docs!
 
-1. Make sure you have doxygen and all fonts
-`bash
-# as root
-yum install doxygen
-yum install gnu-free-sans-fonts
-`
-2. Call:
-`bash
+1\. Make sure you have doxygen and all fonts  
+```bash
+# as root  
+yum install doxygen  
+yum install gnu-free-sans-fonts  
+``` 
+2\. Call:
+```bash
 cd docs-builder
 ./builder build
-`
-3. Wait for it to finish
-4. Collect the bits in local-temp/output
+```
+3\. Wait for it to finish  
+4\. Collect the bits in local-temp/output
 
    It will contain folders with doxygen HTML as well as zip files conveniently prepared for upload to sourceforge
 
@@ -22,21 +22,21 @@ cd docs-builder
 
 CEGUI hosts API reference and other docs at http://static.cegui.org.uk/docs Uploading there requires SourceForge project access to CEGUI.
 
-1. Get the zip files into `/home/project-web/crayzedsgui/htdocs/docs/` using scp
+1\. Get the zip files into `/home/project-web/crayzedsgui/htdocs/docs/` using scp
 
-2. Request a shell
+2\. Request a shell
 ```bash
 ssh -t $username,crayzedsgui@shell.sourceforge.net create
 ```
-3. Navigate to the crayzedsgui htdocs/docs folder
+3\. Navigate to the crayzedsgui htdocs/docs folder
 ```bash
 cd /home/project-web/crayzedsgui/htdocs/docs/
 ```
-4. Extract all the zip files
+4\. Extract all the zip files
 ```bash
 for z in *.zip; do unzip $z; done
 ```
-5. Cleanup
+5\. Cleanup
 ```bash
 rm *.zip
 ```
