@@ -3,16 +3,16 @@
 ## Let's build the docs!
 
 1. Make sure you have doxygen and all fonts
-```bash
+`bash
 # as root
 yum install doxygen
 yum install gnu-free-sans-fonts
-```
+`
 2. Call:
-```bash
+`bash
 cd docs-builder
 ./builder build
-```
+`
 3. Wait for it to finish
 4. Collect the bits in local-temp/output
 
