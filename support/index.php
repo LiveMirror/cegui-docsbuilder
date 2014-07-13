@@ -9,34 +9,36 @@ $dirs = scandir($parent_dir);
 
 $cegui_versions = array();
 $ceed_versions = array();
+$ceed_snapshot_versions = array();
 
 foreach($dirs as $dir)
 {
     if (!is_dir($dir))
         continue;
 
-    if (preg_match("/[0-9]+\.[0-9]+\.[0-9]+/", $dir))
-        array_push($cegui_versions, $dir);
-    else if (preg_match("/ceed-[0-9]+\.[0-9]+\.[0-9]+/", $dir))
+    if (preg_match("/ceed-[0-9]+\.[0-9]+\.[0-9]+/", $dir))
         array_push($ceed_versions, $dir);
     else if (preg_match("/ceed-snapshot[0-9]+/", $dir))
-        array_push($ceed_versions, $dir);
+        array_push($ceed_snapshot_versions, $dir);
+    else if (preg_match("/[0-9]+\.[0-9]+\.[0-9]+/", $dir))
+        array_push($cegui_versions, $dir);
 }
 
 rsort($cegui_versions);
 rsort($ceed_versions);
+rsort($ceed_snapshot_versions);
 
 if ($_REQUEST['json'] == '1')
 {
     $ret = array(
         "cegui" => $cegui_versions,
-        "ceed" => $ceed_versions
+        "ceed" => array_merge($ceed_versions, $ceed_snapshot_versions)
     );
 
     echo(json_encode($ret));
 }
 else
 {
-    render_page($cegui_versions, $ceed_versions);
+    render_page($cegui_versions, array_merge($ceed_versions, $ceed_snapshot_versions));
 }
 ?>
